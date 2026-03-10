@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Moon, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 const navItems = [
   { label: 'О приложении', href: '#about' },
@@ -50,7 +51,14 @@ export function Header() {
             onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center gap-2 text-[#352D55] hover:opacity-80 transition-opacity"
           >
-            <Moon className="w-6 h-6" strokeWidth={1.5} />
+            <div className="w-7 h-7 relative rounded-full overflow-hidden">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-03-10%20105913-4LcNmyARB75zG5g32QdyTdbw9LuoRr.png"
+                alt="Veta Moon Logo"
+                fill
+                className="object-cover grayscale"
+              />
+            </div>
             <span className="font-serif text-xl font-medium">Veta</span>
           </a>
 

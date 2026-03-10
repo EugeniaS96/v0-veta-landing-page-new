@@ -19,14 +19,14 @@ export function NatalChart() {
   }
 
   return (
-    <section id="natal-chart" className="py-24 sm:py-32 px-4 bg-white">
+    <section id="natal-chart" className="py-16 sm:py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 sm:mb-20"
+          className="text-center mb-12 sm:mb-16"
         >
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#352D55]">
             Натальная карта

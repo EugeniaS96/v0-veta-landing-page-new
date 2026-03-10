@@ -77,16 +77,98 @@ const astrologyItems = [
   },
 ]
 
+// Decorative vine SVG component
+function DecorativeVine({ side }: { side: 'left' | 'right' }) {
+  const isLeft = side === 'left'
+  
+  return (
+    <div 
+      className={`absolute top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none ${
+        isLeft ? 'left-0 xl:-left-8' : 'right-0 xl:-right-8'
+      }`}
+    >
+      <svg
+        width="40"
+        height="400"
+        viewBox="0 0 40 400"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`opacity-40 ${isLeft ? '' : 'scale-x-[-1]'}`}
+      >
+        {/* Main vertical line */}
+        <line x1="20" y1="0" x2="20" y2="400" stroke="#C9C4D4" strokeWidth="1" />
+        
+        {/* Vine curves and leaves */}
+        <path 
+          d="M20,40 Q35,50 30,70 Q25,85 20,80" 
+          stroke="#352D55" 
+          strokeWidth="0.8" 
+          fill="none"
+          opacity="0.5"
+        />
+        <ellipse cx="32" cy="55" rx="6" ry="10" fill="none" stroke="#352D55" strokeWidth="0.6" opacity="0.4" transform="rotate(25, 32, 55)" />
+        
+        <path 
+          d="M20,100 Q5,110 10,130 Q15,145 20,140" 
+          stroke="#352D55" 
+          strokeWidth="0.8" 
+          fill="none"
+          opacity="0.5"
+        />
+        <ellipse cx="8" cy="115" rx="5" ry="9" fill="none" stroke="#352D55" strokeWidth="0.6" opacity="0.4" transform="rotate(-20, 8, 115)" />
+        
+        <path 
+          d="M20,170 Q35,180 30,200 Q25,215 20,210" 
+          stroke="#352D55" 
+          strokeWidth="0.8" 
+          fill="none"
+          opacity="0.5"
+        />
+        <ellipse cx="32" cy="185" rx="6" ry="10" fill="none" stroke="#352D55" strokeWidth="0.6" opacity="0.4" transform="rotate(20, 32, 185)" />
+        
+        <path 
+          d="M20,240 Q5,250 10,270 Q15,285 20,280" 
+          stroke="#352D55" 
+          strokeWidth="0.8" 
+          fill="none"
+          opacity="0.5"
+        />
+        <ellipse cx="8" cy="255" rx="5" ry="9" fill="none" stroke="#352D55" strokeWidth="0.6" opacity="0.4" transform="rotate(-25, 8, 255)" />
+        
+        <path 
+          d="M20,310 Q35,320 30,340 Q25,355 20,350" 
+          stroke="#352D55" 
+          strokeWidth="0.8" 
+          fill="none"
+          opacity="0.5"
+        />
+        <ellipse cx="32" cy="325" rx="6" ry="10" fill="none" stroke="#352D55" strokeWidth="0.6" opacity="0.4" transform="rotate(15, 32, 325)" />
+        
+        {/* Small dots/berries */}
+        <circle cx="28" cy="75" r="2" fill="#352D55" opacity="0.3" />
+        <circle cx="12" cy="135" r="1.5" fill="#352D55" opacity="0.3" />
+        <circle cx="28" cy="205" r="2" fill="#352D55" opacity="0.3" />
+        <circle cx="12" cy="275" r="1.5" fill="#352D55" opacity="0.3" />
+        <circle cx="28" cy="345" r="2" fill="#352D55" opacity="0.3" />
+      </svg>
+    </div>
+  )
+}
+
 export function HowAstrologyWorks() {
   return (
-    <section id="how-it-works" className="py-24 sm:py-32 px-4 bg-white">
-      <div className="max-w-3xl mx-auto">
+    <section id="how-it-works" className="py-16 sm:py-20 px-4 bg-white relative overflow-hidden">
+      {/* Decorative side elements */}
+      <DecorativeVine side="left" />
+      <DecorativeVine side="right" />
+      
+      <div className="max-w-3xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16 sm:mb-20"
+          className="text-center mb-12 sm:mb-16"
         >
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#352D55]">
             Как работает астрология?
