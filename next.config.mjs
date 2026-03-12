@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production'
-const repo = 'veta-landing-page' // сюда подставишь точное имя нового репозитория
+const repo = 'v0-veta-landing-page-new'
 
 const nextConfig = {
   output: 'export',
